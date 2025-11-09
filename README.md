@@ -1,4 +1,4 @@
-# brand-assets
+# Agroasys
 Agroasys – Web3 Agricultural Trade Settlement Platform
 <p align="center">
   <img src="brandmark-design (7).png" width="200" alt="Agroasys Logo">
