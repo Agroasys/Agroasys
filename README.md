@@ -76,12 +76,12 @@ This technology stack is derived from our system architecture plan, outlining th
 * **Infrastructure as Code (IaC):** Terraform
 * **CI/CD:** GitHub Actions
 * **Monitoring:** Prometheus & Grafana
-* **On/Off-Ramp Partner(s)**
 
 ### Key External Integrations
 
 * **Fiat Payment Gateways:** Stripe, M-Pesa
 * **Crypto Wallets:** Integrated Polkadot wallets (e.g., Talisman)
+* **On/Off-Ramp Partner(s)**
 
 ---
 
