@@ -54,7 +54,7 @@ To become Africa’s leading infrastructure provider for decentralized and secur
 |-------|------|--------|
 | Aston Steven | Founder & Managing Director | [Astonstevn](https://github.com/Astonstevn) |
 | Mrisho Lukamba | Blockchain Engineer & Cryptography Specialist | [MrishoLukamba](https://github.com/MrishoLukamba) |
-| Percy Egno | Chief Technology Officer (CTO) | [mwagenipecy](https://github.com/mwagenipecy) |
+| Julius Mushi | Chief Technology Officer (CTO) | [Julius Mushi](https://github.com/kingposhwolf) |
 
 ---
 
