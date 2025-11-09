@@ -88,7 +88,7 @@ This technology stack is derived from our system architecture plan, outlining th
 ##  Platform Architecture (High-Level)
 
 <p align="center">
-  <img src="Architecture-overview.svg" alt="Agroasys Platform Architecture">
+  <img src="Architecture-overview.png" alt="Agroasys Platform Architecture">
 </p>
 
 ---
