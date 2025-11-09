@@ -24,11 +24,64 @@ To become Africa’s leading infrastructure provider for decentralized and secur
 
 ---
 
-##  Tech Stack
-- **Frontend Framework:** React (Vite + TypeScript)  
-- **UI Components:** shadcn-ui, Tailwind CSS  
-- **Security / Blockchain Layer:** Custom cryptographic settlement modules (planned)  
-- **Architecture:** Web3-ready modular system for settlement & contract management  
+# Tech Stack
+
+This technology stack is derived from our system architecture plan, outlining the core components and services.
+
+### Presentation Layer (Frontend)
+
+* **Web Application:** React
+
+### Application Layer (Backend)
+
+* **Architecture:** Microservices
+* **API Management:** API Gateway
+* **Core Services:**
+    * User Service
+    * Auth Service
+    * Project Service
+    * Contract Service
+    * Payment Service
+    * Settlement Service
+    * Wallet Service
+    * Notification Service
+
+### Business Logic & Messaging
+
+* **Event Bus:** Kafka
+
+### Crypto & Settlement
+
+* **Digital Signatures:** Ed25519
+* **Contract-Legal:** Ricardian Contracts
+* **Settlement:** Custom Settlement Engine
+* **On-Chain Settlement:** Polkadot (via USDC)
+* **On-Chain Anchoring:** Polkadot
+
+### Persistence Layer (Data & Storage)
+
+* **Primary Database:** PostgreSQL
+* **Database Caching/Replication:** PostgreSQL Read Replica
+* **Application Cache:** Redis
+* **File Storage:** Object Storage (S3-compatible)
+
+### Data & Analytics
+
+* **Data Warehouse:** ClickHouse
+* **BI & Visualization:** Metabase
+
+### Infrastructure & Operations (DevOps)
+
+* **Container Orchestration:** Kubernetes
+* **Infrastructure as Code (IaC):** Terraform
+* **CI/CD:** GitHub Actions
+* **Monitoring:** Prometheus & Grafana
+* **On/Off-Ramp Partner(s)**
+
+### Key External Integrations
+
+* **Fiat Payment Gateways:** Stripe, M-Pesa
+* **Crypto Wallets:** Integrated Polkadot wallets (e.g., Talisman)
 
 ---
 
