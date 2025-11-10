@@ -30,58 +30,96 @@ This technology stack is derived from our system architecture plan, outlining th
 
 ### Presentation Layer (Frontend)
 
-* **Web Application:** React
+* **Web Application:** React (Vite + TypeScript)
+* **UI Components:** shadcn/ui, Tailwind CSS
+* **UX State Management:** React Query, Zustand
+* **Animations:** Framer Motion
+
+---
 
 ### Application Layer (Backend)
 
-* **Architecture:** Microservices
-* **API Management:** API Gateway
-* **Core Services:**
-    * User Service
-    * Auth Service
-    * Project Service
-    * Contract Service
-    * Payment Service
-    * Settlement Service
-    * Wallet Service
-    * Notification Service
+* **Architecture:** Modular Microservices
+* **API Management:** API Gateway (rate-limiting, routing, versioning)
+* **Authentication:** OAuth2 / JWT-based context
+
+#### Core Services
+* **Auth Service** – Handles authentication, session, and token management.  
+* **User Service** – Manages user profiles, roles (buyers, suppliers, admin), and access control.  
+* **Project (Marketplace) Service** – Manages listings, offers, and negotiations.  
+* **Contract Service** – Ricardian contracts engine for legally binding trade agreements.  
+* **Finance Service** – Combines payment orchestration, settlements, and escrow wallet ledger.  
+* **Payment Service** – Handles payment intents, reconciliations, and external integrations.  
+* **Settlement Service** – Manages clearing logic and escrow fund release.  
+* **Escrow Wallets Service (Internal)** – Internal custodial ledger for secure fund holding (non-user wallets).  
+* **Notification Service** – Unified in-app, email, and SMS alerts.  
+* **QA / Certificate Service** – Stores and verifies quality assurance certificates.  
+* **Traceability / 3PL Integration Service** – Connects third-party logistics for shipment tracking.  
+* **Market Data / Price Oracle Service** – Provides real-time commodity prices and analytics.  
+* **Admin / Dispute Resolution Service** – Manages arbitration, escrow oversight, and dispute workflows.  
+* **Backup & Archive Service** – Immutable archival for contracts and certificates.  
+* **KYC & Compliance Service** – Handles user verification, sanctions screening, and compliance.  
+* **Analytics / BI Service** – Aggregates operational and market data for insights.  
+* **Monitoring / Logging / Audit Service** – Provides observability, logging, and legal audit trails.  
+* **Files / Artifacts Service** – Stores contracts, QA documents, and attachments.
+
+---
 
 ### Business Logic & Messaging
 
-* **Event Bus:** Kafka
+* **Event Bus:** Kafka (domain-driven events and workflow orchestration)  
+* **Workflow Orchestration:** SAGA patterns for settlement and dispute processes  
+* **Feature Flags:** Config-based feature toggling for controlled rollouts
+
+---
 
 ### Crypto & Settlement
 
-* **Digital Signatures:** Ed25519
-* **Contract-Legal:** Ricardian Contracts
-* **Settlement:** Custom Settlement Engine
-* **On-Chain Settlement:** Polkadot (via USDC)
-* **On-Chain Anchoring:** Polkadot
+* **Digital Signatures:** Ed25519  
+* **Contract-Legal:** Ricardian Contracts (legally binding & blockchain-verifiable)  
+* **Settlement Engine:** Custom in-house engine integrated with internal escrow wallets  
+* **On-Chain Anchoring:** Polkadot-based anchoring for proof of contract integrity  
+* **On-Chain Settlement (Future):** Polkadot (via USDC and verified custodians)
+
+---
 
 ### Persistence Layer (Data & Storage)
 
-* **Primary Database:** PostgreSQL
-* **Database Caching/Replication:** PostgreSQL Read Replica
-* **Application Cache:** Redis
-* **File Storage:** Object Storage (S3-compatible)
+* **Primary Database:** PostgreSQL  
+* **Database Caching/Replication:** PostgreSQL Read Replica  
+* **Application Cache:** Redis  
+* **File Storage:** S3-compatible Object Storage  
+* **Data Warehouse:** ClickHouse (aggregated analytics and audit logging)  
+* **Long-Term Archive:** Glacier / Cold S3 for immutable backups
+
+---
 
 ### Data & Analytics
 
-* **Data Warehouse:** ClickHouse
-* **BI & Visualization:** Metabase
+* **Data Warehouse:** ClickHouse  
+* **BI & Visualization:** Metabase  
+* **Event Tracking:** Custom telemetry pipeline via Kafka → ClickHouse
+
+---
 
 ### Infrastructure & Operations (DevOps)
 
-* **Container Orchestration:** Kubernetes
-* **Infrastructure as Code (IaC):** Terraform
-* **CI/CD:** GitHub Actions
-* **Monitoring:** Prometheus & Grafana
+* **Container Orchestration:** Kubernetes  
+* **Infrastructure as Code (IaC):** Terraform  
+* **CI/CD:** GitHub Actions  
+* **Monitoring:** Prometheus & Grafana  
+* **Logging:** ELK Stack (Elasticsearch, Logstash, Kibana)  
+* **Secrets & Config:** HashiCorp Vault / Kubernetes Secrets  
+* **Version Control:** GitHub Organization (protected branches and restricted permissions)
+
+---
 
 ### Key External Integrations
 
-* **Fiat Payment Gateways:** Stripe, M-Pesa
-* **Crypto Wallets:** Integrated Polkadot wallets (e.g., Talisman)
-* **On/Off-Ramp Partner(s)**
+* **Crypto Wallets:** Polkadot ecosystem wallets (e.g., Talisman)  
+* **Logistics Partners (3PL):** Integrated via Traceability Service  
+* **Market Data Providers:** Commodity market APIs for real-time price feeds  
+* **On/Off-Ramp Partners:** for fiat–crypto bridge
 
 ---
 
